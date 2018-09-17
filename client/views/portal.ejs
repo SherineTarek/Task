@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!-- <link rel="stylesheet" href="./style/index.css" type="text/css" media="screen" charset="utf-8"> -->
+    <!-- <script type="text/javascript" src="./Js/index.js"></script> -->
+  </head>
+  <body style="text-align: center">
+      <h1> Portal </h1>
+      <form method="post" action="/view" >
+           <button type="submit"  value="Submit">View Employee</button>
+      </form>
+      <form method="post" action="/add" >
+          <input id="username" placeholder="Username" type="text" name="User[name]">
+          <input id="email" placeholder="E-mail" type="text" name="User[email]">
+          <input id="mobile" placeholder="Mobile No." type="text" name="User[mobile]">
+          <input id="hireDate" placeholder="Date Hired" type="text" name="User[hireDate]">
+           <button type="submit"  value="Submit">Add Employee</button>
+      </form>
+      <form method="post" action="/edit" >
+          <input id="id" placeholder="Please enter the ID" type="text" name="User[id]">
+          <button type="submit"  value="Submit">Edit Employee</button>
+      </form>
+      <form method="post" action="/delete" >
+          <input id="id" placeholder="Please enter the ID" type="text" name="User[id]">
+           <button type="submit"  value="Submit">Delete Employee</button>
+      </form>
+      <!-- <div id="todoShow" ></div> -->
+  </body>
+</html>

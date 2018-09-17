@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!-- <link rel="stylesheet" href="./style/index.css" type="text/css" media="screen" charset="utf-8"> -->
+    <!-- <script type="text/javascript" src="./Js/index.js"></script> -->
+  </head>
+  <body style="text-align: center">
+      <h1> Attendance Portal </h1>
+      <ul>
+    <% report.forEach(function(rep) { %>
+
+        <li style="list-style: none"><%= rep.day %> - <%= rep.Employee_id %> - <%= rep.hours %> - <%= rep.status %></li>
+    <% }); %>
+</ul>
+
+  </body>
+</html>

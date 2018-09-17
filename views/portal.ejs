@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!-- <link rel="stylesheet" href="./style/index.css" type="text/css" media="screen" charset="utf-8"> -->
+    <!-- <script type="text/javascript" src="./Js/index.js"></script> -->
+  </head>
+  <body style="text-align: center">
+      <h1> Portal </h1>
+      <!-- <form method="get" action="/att" >
+           <button type="submit"  value="Submit">View Attendance</button>
+      </form> -->
+      <form method="post" action="/add" >
+          <input id="username" placeholder="Username" type="text" name="User[name]">
+          <input id="email" placeholder="E-mail" type="text" name="User[email]">
+          <input id="mobile" placeholder="Mobile No." type="text" name="User[mobile]">
+          <input type="text" name="User[hireDate]">
+           <button type="submit"  value="Submit">Add Employee</button>
+      </form>
+      <div id="emplyeeShow" >
+          <ul>
+              <% employee.forEach(function(emp) { %>
+                  <div>
+                      <br><li id= "emp" style="list-style: none"><%= emp.name %> - <%= emp.mobile %> - <%= emp.email %> </li>
+                      <form method="post" action="/delete" >
+                          <button type="submit"  name="User[id]" value= <%= emp._id %> >Delete</button>
+                      </form>
+                      <form method="post" action="/edit" >
+                          <input id="username" placeholder="Username" type="text" name="User[name]">
+                          <input id="email" placeholder="E-mail" type="text" name="User[email]">
+                          <input id="mobile" placeholder="Mobile No." type="text" name="User[mobile]">
+                          <input id="hireDate" placeholder="Date Hired" type="text" name="User[hireDate]">
+                          <button type="submit"  name="User[id]" value= <%= emp._id %> >Edit</button>
+                      </form>
+                      <form method="post" action="/report" >
+                          <button type="submit"  name="User[id]" value= <%= emp._id %> >Find Report</button>
+
+                      </form>
+                      <form action="/attendance" method="post">
+                            <input list="browsers" name="att">
+                                <datalist id="browsers">
+                                    <option value="Present">
+                                    <option value="Absent">
+                                    <option value="Sick">
+                                    <option value="Leave">
+                                    <option value="DayOff">
+                                </datalist>
+                                <input type="text" name="day">
+                                <!-- <input type="submit" value="Send"> -->
+                                <button type="submit"  name="att" value= <%= emp._id %>  >Change Att</button>
+                    </form>
+                  </div>
+                  <% }); %>
+
+        </ul>
+      </div>
+
+  </body>
+</html>
